@@ -9,7 +9,7 @@ export default async function DetailPage({ params: { foodId } }) {
   return (
     <div>
       <TopBanner detailFood={detailFood} />
-      <Steps steps={steps} key={steps} />
+      <Steps steps={steps} />
     </div>
   );
 }
