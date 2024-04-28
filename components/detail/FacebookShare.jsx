@@ -1,8 +1,8 @@
 import { FacebookShareButton } from "react-share";
 
 export default function FacebookShare() {
+  const currentPageUrl = window.location.href;
   const handelFbShare = () => {
-    const currentPageUrl = window.location.href;
     console.log("Current location is :", currentPageUrl);
   };
   return (
@@ -11,7 +11,7 @@ export default function FacebookShare() {
       className="flex gap-2 text-gray-600 cursor-pointer hover:text-[#0E79F6]"
     >
       <FacebookShareButton
-        url="www.sm.com"
+        url={currentPageUrl}
         quote="Please Share this post"
         hastag="#Food"
       >
