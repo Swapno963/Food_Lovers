@@ -2,13 +2,15 @@ import { userModel } from "@/models/user-model";
 import mongoose from "mongoose";
 
 import { FoodModel } from "@/models/food-model";
+import connectMongo from "@/services/mongo";
 import {
   replaceMongoIdInArray,
   replaceMongoIdInObject,
 } from "@/utils/data-util";
 
 async function getAllFoods(query) {
-  let allFoods = await FoodModel.find().lean();
+  await connectMongo();
+  let allFoods = await FoodModel?.find().lean();
   return replaceMongoIdInArray(allFoods);
 }
 

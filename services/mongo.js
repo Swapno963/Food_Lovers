@@ -16,7 +16,7 @@ async function connectMongo() {
       bufferCommands: false,
       dbName: "khanaKhazana",
     };
-    cached.promise = mongoose.connect(MONGO_URI, opts);
+    cached.promise = mongoose?.connect(MONGO_URI, opts);
   }
   try {
     cached.connection = await cached.promise;
